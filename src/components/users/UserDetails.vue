@@ -3,22 +3,21 @@ import type { User } from '@/types/user'
 import { collection, addDoc } from 'firebase/firestore'
 import { useFirestore, useCurrentUser } from 'vuefire'
 import { ref } from 'vue'
-import type { Photo } from '@/types/photo'
 
 const userName = useCurrentUser()
 const db = useFirestore()
 const errorMessage = ref('')
 const addMessage = ref('')
 
-async function addItem(usr: Photo) {
+async function addItem(usr: User) {
   if (!userName.value) {
     errorMessage.value = 'Debes iniciar sesión para marcar una foto como favorita.'
     return
   }
   try {
     await addDoc(collection(db, 'follow'), {
-      username: usr.user.username,
-      userImage: usr.user.profile_image.small,
+      username: usr.username,
+      userImage: usr.profile_image.small,
       user_id: userName.value.uid,
     })
     addMessage.value = 'Follow!'
@@ -28,7 +27,6 @@ async function addItem(usr: Photo) {
 }
 defineProps<{
   user: User
-  image: Photo
 }>()
 defineOptions({
   name: 'UserDetails',
@@ -47,7 +45,7 @@ defineOptions({
           <h2 class="text-4xl font-semibold tracking-tight text-pretty sm:text-5xl">
             {{ user.name }}
           </h2>
-          <button @click="addItem(image)" class="btn me-4">
+          <button @click="addItem(user)" class="btn me-4">
             Follow
             <svg
               xmlns="http://www.w3.org/2000/svg"
