@@ -1,64 +1,47 @@
-# vue-images
+# Vue Images
 
-This template should help get you started developing with Vue 3 in Vite.
+Aplicación de galería de imágenes desarrollada con **Vue 3**. Permite autenticación de usuarios, subir imágenes, marcar favoritas y navegar perfiles usando **Firebase** y **Pinia** para el estado global.
 
-## Recommended IDE Setup
+## Características
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+* Registro y login de usuarios
+* Feed de imágenes
+* Subida de fotos
+* Favoritos por usuario
+* Perfil con fotos propias
+* Rutas protegidas
 
-## Type Support for `.vue` Imports in TS
+## Tecnologías usadas
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+* Vue 3
+* Vite
+* Pinia
+* Vue Router
+* Firebase (Auth + Firestore)
+* Tailwind CSS + DaisyUI
 
-## Customize configuration
+## Instalación
 
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+## Ejecutar en desarrollo
 
-```sh
+```bash
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+## Build de producción
 
-```sh
+```bash
 npm run build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+## Configuración
 
-```sh
-npm run test:unit
-```
+Es necesario configurar **Firebase** y agregar las variables de entorno correspondientes.
 
-### Run End-to-End Tests with [Playwright](https://playwright.dev)
+## Repositorio
 
-```sh
-# Install browsers for the first run
-npx playwright install
-
-# When testing on CI, must build the project first
-npm run build
-
-# Runs the end-to-end tests
-npm run test:e2e
-# Runs the tests only on Chromium
-npm run test:e2e -- --project=chromium
-# Runs the tests of a specific file
-npm run test:e2e -- tests/example.spec.ts
-# Runs the tests in debug mode
-npm run test:e2e -- --debug
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+[https://github.com/Kenkyoo/vue-images](https://github.com/Kenkyoo/vue-images)
